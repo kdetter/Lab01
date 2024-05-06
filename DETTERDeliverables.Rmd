@@ -13,6 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(naniar)
 
+
 #load data
 
 data <- read_csv("data/IPEDS_data.csv")
@@ -74,6 +75,14 @@ bysizechart
 #Save chart 'bysize'
 
 saveRDS(bysizechart, file = "bysizechart.rds")
+
+```
+
+```{r}
+#Deliverable 4 - choropleth map: Concentration of Surveyed Institutions by State
+
+
+
 
 ```
 
