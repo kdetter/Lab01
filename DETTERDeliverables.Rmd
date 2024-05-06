@@ -1,5 +1,5 @@
 ---
-title: "First Draft"
+title: "Draft Deliverables"
 author: "Karen Detter"
 date: "`r Sys.Date()`"
 output: html_document
@@ -29,11 +29,18 @@ data %>% replace_with_na(replace = list(Size = "Not reported"))
 #factor Size variable and order category values
 data$Size = factor(data$Size, levels = c("Under 1,000", "1,000 - 4,999", "5,000 - 9,999", "10,000 - 19,999", "20,000 and above"), ordered = TRUE)
 
-#Creat chart
-ggplot(data=subset(data, !is.na(Size)), aes(x=Size)) +
+#Create chart
+sizechart=ggplot(data=subset(data, !is.na(Size)), aes(x=Size)) +
   geom_bar() +
-  labs(title = "Institution Size By Enrollment - 2018") +
+  labs(title = "Institution Size By Enrollment") +
+  labs(subtitle = "Most Institutions in the Sample Had Smaller Populations") +
   labs(x= "Total Enrollment", y = "Number of Institutions")
+sizechart
+
+#Save chart 'size'
+
+saveRDS(sizechart, file = "sizechart.rds")
+
 ```
 
 
@@ -42,6 +49,31 @@ ggplot(data=subset(data, !is.na(Size)), aes(x=Size)) +
 #Deliverable 2 - univariate plot of numeric variable
 #Histogram of on-time graduation rate
 
-hist(data$`Graduation rate - Bachelor degree within 4 years, total`, main = "Distribution of On-Time Graduation Rates - 2018", xlab = "% of Graduates Who Finished in Four Years", ylab = "Number of Institutions" )
+base = ggplot(data=data)
+ontimechart= base + geom_histogram(aes(x=`Graduation rate - Bachelor degree within 4 years, total`)) +
+    labs(title = "Distribution of On-Time Graduation Rates") +
+  labs(subtitle = "A Mean of Only 41% of Students Completed Bachelor's Degrees in 4 Years") +
+  labs(x= "% of Graduates Who Finished in Four Years", y = "Number of Institutions")
+ontimechart
+
+#Save chart 'ontime'
+
+saveRDS(ontimechart, file = "ontimechart.rds")
+
+```
+
+```{r}
+#Deliverable 3 - bivariate plot of size and 4-year graduation rates
+
+bysizechart= base + geom_boxplot(data=subset(data, !is.na(Size)), aes(x= Size, y=`Graduation rate - Bachelor degree within 4 years, total`)) +
+  labs(title = "On-Time Graduation Rates By Institution Size") +
+  labs(subtitle = "Low 4-Year Graduation Rates Are Common Regardless of School Size") +
+  labs(x= "Total Enrollment", y = "% of Graduates Who Finished in 4 Years")
+bysizechart
+
+#Save chart 'bysize'
+
+saveRDS(bysizechart, file = "bysizechart.rds")
+
 ```
 

@@ -1,0 +1,49 @@
+---
+title: "Rates of On-Time Graduation at U.S. Universities"
+author: "Karen Detter"
+bibliography: testVisual.bib
+output: 
+  flexdashboard::flex_dashboard
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard) # always
+```
+
+## Sidebar {.sidebar}
+
+**All graphics based on 2018 data from the U.S. Department of Education's National Center for Education Statistics. The dataset contains self-reported responses from 2,141 Institutions in the United States Granting 4-Year Degrees**
+
+
+*U.S. Department of Education. (2018). National Center for Education Statistics, Integrated Postsecondary Education Data System (IPEDS), [data set]. <https://nces.ed.gov/ipeds/datacenter/InstitutionByName.aspx?goToReportId=1>*
+
+
+## Column {.tabset .tabset-fade}
+
+### Rates of 4-Year Graduation
+
+```{r}
+readRDS("ontimechart.rds")
+```
+
+### Institution Sizes (By Enrollment)
+
+```{r}
+readRDS("sizechart.rds")
+```
+
+### 4-Year Graduation Rate By Institution Size
+
+```{r}
+readRDS("bysizechart.rds")
+```
+
+### Map
+
+```{r}
+
+```
+
+### References
+
+
