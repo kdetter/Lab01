@@ -82,7 +82,7 @@ saveRDS(bysizechart, file = "bysizechart.rds")
 #Deliverable 4 - choropleth map: Concentration of Surveyed Institutions by State
 
 #import spatial data
-shape_data <- st_read("data/gz_2010_us_040_00_500k.shp")
+shape_data <- st_read("data/gz_2010_us_040_00_500k.json")
 
 ```
 
@@ -106,11 +106,13 @@ map <- ggplot(merged_data) +
   geom_sf(aes(fill = `Graduation rate - Bachelor degree within 4 years, total`), color = "gray", size = 2.0) +
   scale_fill_viridis_c() +
   theme_minimal() +
-  labs(fill = "% of Graduates Finishing in 4 Years", title = "Level of 4-Year Graduation By State")
+  labs(fill = "% of Graduates Finishing in 4 Years", title = "Level of 4-Year Graduation By State for Sampled Institutions", subtitle = "Outliers with high rates mostly seen in less populous states")
 map
 ```
 
 ```{r}
+# save map
 
+saveRDS(map, file = "map.rds")
 ```
 

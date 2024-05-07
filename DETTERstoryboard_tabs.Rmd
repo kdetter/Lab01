@@ -39,7 +39,10 @@ readRDS("bysizechart.rds")
 
 ### Map
 
-![map](map.png)
+```{r picture, echo = F, out.width = '100%'}
+knitr::include_graphics("map.png")
+```
+
 
 ### References
 
