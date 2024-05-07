@@ -46,7 +46,7 @@ readRDS("bysizechart.rds")
 
 ### References
 
-Aden-Buie, G., Sievert, C., Iannone, R., Allaire, \relax JJ, & Borges, B. (2023). Flexdashboard: R Markdown Format for Flexible Dashboards.
+Aden-Buie, G., Sievert, C., Iannone, R., Allaire, JJ, & Borges, B. (2023). Flexdashboard: R Markdown Format for Flexible Dashboards.
 
 Leisch, F., & Team, R. C. (2024). Sweave User Manual.
 
