@@ -42,7 +42,7 @@ readRDS("bysizechart.rds")
 ```{r picture, echo = F, out.width = '100%'}
 knitr::include_graphics("map.png")
 ```
-(Gray states had no institutions represented in the sample)
+
 
 ### References
 
