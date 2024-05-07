@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 library(tidyverse)
 library(naniar)
-
+library(sf)
 
 #load data
 
@@ -81,8 +81,32 @@ saveRDS(bysizechart, file = "bysizechart.rds")
 ```{r}
 #Deliverable 4 - choropleth map: Concentration of Surveyed Institutions by State
 
+#import spatial data
+shape_data <- st_read("data/tl_2023_us_state.shp")
 
+```
 
+```{r}
+#standardize identifier in both data sets to 'State'
 
+shape_data <- shape_data %>% 
+  rename(State = NAME)
+```
+
+```{r}
+#merge data sets
+
+merged_data <- left_join(shape_data,data, by = "State")
+```
+
+```{r}
+#create map
+
+map <- ggplot(merged_data) +
+  geom_sf(aes(fill = `Graduation rate - Bachelor degree within 4 years, total`), color = "white", size = 0.5) +
+  scale_fill_viridis_c() +
+  theme_minimal() +
+  labs(fill = "% of Graduates Finishing in 4 Years", title = "Level of 4-Year Graduation By State")
+map
 ```
 
