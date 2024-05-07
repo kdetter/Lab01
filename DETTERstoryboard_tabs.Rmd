@@ -52,8 +52,10 @@ Leisch, F., & Team, R. C. (2024). Sweave User Manual.
 
 Magallanes Reyes, J. M. (2022). Data Visualization for Social and Policy Research: A Step-by-Step Approach Using R and Python. Cambridge University Press. https://doi.org/10.1017/9781108625425
 
+U.S. Census Bureau. (2023). TIGER/Line Shapefiles. Census.Gov. https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html
+
 U.S. Department of Education. (2018). National Center for Education Statistics, Integrated Postsecondary Education Data System (IPEDS), [2018], [data set]. https://nces.ed.gov/ipeds/datacenter/InstitutionByName.aspx?goToReportId=1
 
-US Census Bureau. (2023). TIGER/Line Shapefiles. Census.Gov. https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html
+
 
 
