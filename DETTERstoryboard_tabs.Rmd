@@ -14,7 +14,7 @@ library(flexdashboard) # always
 **All graphics based on 2018 data from the U.S. Department of Education's National Center for Education Statistics. The dataset contains self-reported responses from 2,141 Institutions in the United States Granting 4-Year Degrees**
 
 
-*U.S. Department of Education. (2018). National Center for Education Statistics, Integrated Postsecondary Education Data System (IPEDS), [data set]. <https://nces.ed.gov/ipeds/datacenter/InstitutionByName.aspx?goToReportId=1>*
+
 
 
 ## Column {.tabset .tabset-fade}
@@ -42,7 +42,7 @@ readRDS("bysizechart.rds")
 ```{r picture, echo = F, out.width = '100%'}
 knitr::include_graphics("map.png")
 ```
-
+(Gray states had no institutions represented in the sample)
 
 ### References
 
