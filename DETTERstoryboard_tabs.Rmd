@@ -1,7 +1,6 @@
 ---
 title: "Rates of On-Time Graduation at U.S. Universities"
 author: "Karen Detter"
-bibliography: testVisual.bib
 output: 
   flexdashboard::flex_dashboard
 ---
@@ -40,9 +39,7 @@ readRDS("bysizechart.rds")
 
 ### Map
 
-```{r}
-
-```
+![map](map.png)
 
 ### References
 
